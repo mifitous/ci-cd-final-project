@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: python:3.9-slim
+    container: python:3.12-slim
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,5 +24,5 @@ jobs:
           flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
           
-      - name: Run unit tests with nose
-        run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+      - name: Run unit tests with pytest
+        run: pytest --tb=short --cov=service --cov-report=term-missing
