@@ -1,5 +1,5 @@
 # Werkzeug and Flask must be bumped together — Flask 3.x requires Werkzeug>=3.1.0
-Werkzeug==3.1.8
+Werkzeug==3.1.9
 
 # Runtime dependencies
 Flask==3.1.3
